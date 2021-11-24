@@ -1,0 +1,16 @@
+name: Set Target Environment
+description: 
+inputs:
+  environment-name:
+    description: Optional default environment name
+    required: false
+  branch: 
+    default: ${{ github.ref }}
+    description: The current branch used to identify special environments
+    required: true
+outputs:
+  target-environment:
+    description: The target environment based on the provided environment name and current branch name    
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
